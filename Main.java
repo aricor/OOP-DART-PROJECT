@@ -14,10 +14,10 @@ public class Main {
             System.out.println("Welcome to DART, your good old game rental system. The competition has no steam to keep up!");
             System.out.println();
             System.out.println("Please specify your role by entering one of the options given: ");
-            System.out.println("1. Enter “M” for Manager");
-            System.out.println("2. Enter “E” for Employee");
-            System.out.println("3. Enter “C” for Customer");
-            System.out.println("4. Enter “X” to exit system");
+            System.out.println("1. Enter 'M' for Manager");
+            System.out.println("2. Enter 'E' for Employee");
+            System.out.println("3. Enter 'C' for Customer");
+            System.out.println("4. Enter 'X' to exit system");
 
             String choice = input.nextLine();
             input.close(); 
@@ -97,7 +97,7 @@ public class Main {
 
         } else if (managerChoice == 2) {
             // View employee information
-               for (Employee employeeElement : employeeArray) {
+              for (Employee employeeElement : employeeArray) {
               employeeElement.print(); 
             }
 
@@ -174,6 +174,7 @@ public class Main {
         System.out.println("Customer Screen - Type one of the options below:");
         System.out.println("1. Rent a game");
         System.out.println("2. Return a game");
+
         System.out.println("3. Return to Main Menu");
 
         int customerChoice = inputCustomer.nextInt();
