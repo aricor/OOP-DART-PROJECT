@@ -20,7 +20,6 @@ public class Main {
             System.out.println("4. Enter 'X' to exit system");
 
             String choice = input.nextLine();
-            input.close(); 
 
             if (choice.equalsIgnoreCase("M")) {
                 managerMenu(employeeArray);
@@ -36,7 +35,10 @@ public class Main {
             } else {
                 System.out.println("Please choose an option from the menu ");
             }
+            input.close(); 
+
         } while ( exit != 1);
+        
     }
 
     public static Employee inputEmployeeInfo(Scanner input)  {
