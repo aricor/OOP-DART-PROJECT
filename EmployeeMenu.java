@@ -7,9 +7,10 @@ public class EmployeeMenu {
 
         public void displayEmployeeMenu() {
 
+                InputClass input = new InputClass();
+
                 String employeePassword = "Employee123";
-                System.out.println("Enter the password: ");
-                String userPassword = Input.scanner.nextLine();
+                String userPassword = input.inputString("Enter the password: ");
 
                 if (employeePassword.equals(userPassword)) {
 
@@ -23,40 +24,38 @@ public class EmployeeMenu {
                         System.out.println("6. View all games");
                         System.out.println("7. Return to main menu");
 
-                        int employeeChoice = Input.scanner.nextInt();
+                        int employeeChoice = input.inputInt("");
 
-                        if (employeeChoice == 1) {
-                            String employeeC = Input.scanner.next();
+                        switch(employeeChoice){
+                                case 1:
+                                        System.out.println("employee choice is 1 " + employeeChoice); 
+                                        //Register a game
+                                        break;
+                                case 2: 
+                                        //register a game
+                                        break;
+                                case 3:
+                                        System.out.println("Register a customer");
+                                        //Register a customer
+                                        break;
+                                case 4:
+                                        //Remove a customer
+                                        break;
+                                case 5:
+                                        //Show total rent profit
+                                        break;
+                                case 6:
+                                        //view all games
+                                        break;
+                                case 7:
+                                        //return to main menu
 
-                            System.out.println("employee choice is 1 " + employeeC); 
-                                //Register a game
-
-                        } else if (employeeChoice == 2) {
-                                //Remove a game
-
-                        } else if (employeeChoice == 3) {
-                                System.out.println("Register a customer");
-                                //Register a customer
-
-                        } else if (employeeChoice == 4) {
-                                //Remove a customer
-
-                        } else if (employeeChoice == 5) {
-                                //Show total rent profit
-
-                        } else if (employeeChoice == 6) {
-                                //view all games
-
-                        } else if (employeeChoice == 7) {
-                                //return to main menu
-
-                                // Not working
-                                //mainMenu.displayMainMenu();
-
-                        } else {
-                                System.out.println("Please choose an option from the menu");
-                                //Wrong input
-
+                                        // Not working
+                                        //mainMenu.displayMainMenu();
+                                        break;
+                                default:
+                                        System.out.println("Please choose an option from the menu");
+                                        //Wrong input
                         }
 
                 } else {

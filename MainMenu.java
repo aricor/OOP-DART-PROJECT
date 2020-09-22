@@ -1,4 +1,6 @@
-import java.util.ArrayList; 
+import java.util.ArrayList;
+
+//import sun.awt.www.content.audio.x_aiff; 
 public class MainMenu {
 
     MainMenu () {
@@ -7,6 +9,7 @@ public class MainMenu {
 
     public static void displayMainMenu () {
         ArrayList<Employee> employeeArray = new ArrayList<Employee>();
+        InputClass input = new InputClass();
 
         int exit = 0;
         do {
@@ -19,7 +22,7 @@ public class MainMenu {
             System.out.println("3. Enter 'C' for Customer");
             System.out.println("4. Enter 'X' to exit system");
 
-            String choice = Input.scanner.nextLine();
+            String choice = input.inputString("");
 
             if (choice.equalsIgnoreCase("M")) {
                 //managerMenu(employeeArray);
@@ -31,6 +34,8 @@ public class MainMenu {
                 employeeMenu.displayEmployeeMenu();
             } else if (choice.equalsIgnoreCase("C")) {
                // customerMenu();
+               CustomerMenu customerMenu = new CustomerMenu();
+               customerMenu.displayCustomerMenu();
             } else if (choice.equalsIgnoreCase("X")) {
                 System.out.println("Exiting the system");
                 //System.exit(0);
