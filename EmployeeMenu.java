@@ -10,9 +10,8 @@ public class EmployeeMenu {
         public void displayEmployeeMenu() {
 
                 String employeePassword = "Employee123";
-                Scanner inputPassword = new Scanner(System.in);
                 System.out.println("Enter the password: ");
-                String userPassword = inputPassword.nextLine();
+                String userPassword = Main.sc.nextLine();
 
                 if (employeePassword.equals(userPassword)) {
 
