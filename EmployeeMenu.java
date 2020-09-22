@@ -27,7 +27,8 @@ public class EmployeeMenu {
 
                         int employeeChoice = Main.sc.nextInt();
                         if (employeeChoice == 1) {
-                            System.out.println("employee choice is 1"); 
+                            String employeeC = Main.sc.next();
+                            System.out.println("employee choice is 1 " + employeeC); 
                            // inputEmployee.close();
 
                                 //Register a game

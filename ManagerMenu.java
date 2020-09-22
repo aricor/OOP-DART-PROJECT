@@ -7,13 +7,10 @@ public class ManagerMenu {
     public ManagerMenu(ArrayList<Employee> employeeArray) {
         this.employeeArray = employeeArray; 
     }
-    public static Employee inputEmployeeInfo()  {
+    public Employee inputEmployeeInfo()  {
             System.out.println("Enter ID of employee: ");
 
             String ID = Main.sc.next();
-    
-            Main.sc.nextLine();
-    
             System.out.println("Enter name of employee: ");
             String name = Main.sc.next();
             Main.sc.nextLine();
@@ -80,11 +77,8 @@ public class ManagerMenu {
             if (managerChoice == 1) {
     
                 String managerPassword = "Manager123";
-                Scanner inputPassword = new Scanner(System.in);
                 System.out.println("Enter the password: ");
-                String userPassword;
-                userPassword = inputPassword.nextLine();
-                inputPassword.close();
+                String userPassword = Main.sc.nextLine();
                 if (userPassword.equals(managerPassword)) {
                     System.out.println("Success!");
                     //Epic feature 2
