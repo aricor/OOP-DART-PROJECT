@@ -26,7 +26,8 @@ public class MainMenu {
 
             if (choice.equalsIgnoreCase("M")) {
                 //managerMenu(employeeArray);
-
+                ManagerMenu managerMenu = new ManagerMenu(employeeArray); 
+                managerMenu.displayManagerMenu(); 
             } else if (choice.equalsIgnoreCase("E")) { 
                 //employeeMenu();
                 EmployeeMenu employeeMenu = new EmployeeMenu();
