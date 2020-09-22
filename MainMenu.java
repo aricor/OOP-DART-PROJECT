@@ -22,7 +22,8 @@ public class MainMenu {
             System.out.println("3. Enter 'C' for Customer");
             System.out.println("4. Enter 'X' to exit system");
 
-            String choice = Main.sc.nextLine();
+            // String choice = Main.sc.nextLine();
+            String choice = Input.scanner.nextLine();
 
             if (choice.equalsIgnoreCase("M")) {
                 //managerMenu(employeeArray);

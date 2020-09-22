@@ -11,7 +11,8 @@ public class EmployeeMenu {
 
                 String employeePassword = "Employee123";
                 System.out.println("Enter the password: ");
-                String userPassword = Main.sc.nextLine();
+                // String userPassword = Main.sc.nextLine();
+                String userPassword = Input.scanner.nextLine();
 
                 if (employeePassword.equals(userPassword)) {
 
@@ -25,9 +26,13 @@ public class EmployeeMenu {
                         System.out.println("6. View all games");
                         System.out.println("7. Return to main menu");
 
-                        int employeeChoice = Main.sc.nextInt();
+                        // int employeeChoice = Main.sc.nextInt();
+                        int employeeChoice = Input.scanner.nextInt();
+
                         if (employeeChoice == 1) {
-                            String employeeC = Main.sc.next();
+                        //     String employeeC = Main.sc.next();
+                            String employeeC = Input.scanner.next();
+
                             System.out.println("employee choice is 1 " + employeeC); 
                            // inputEmployee.close();
 
