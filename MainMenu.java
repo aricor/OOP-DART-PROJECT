@@ -29,6 +29,8 @@ public class MainMenu {
 
             } else if (choice.equalsIgnoreCase("E")) { 
                 //employeeMenu();
+                EmployeeMenu employeeMenu = new EmployeeMenu();
+                employeeMenu.displayEmoloyeeMenu();
             } else if (choice.equalsIgnoreCase("C")) {
                // customerMenu();
             } else if (choice.equalsIgnoreCase("X")) {
