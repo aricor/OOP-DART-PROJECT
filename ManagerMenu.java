@@ -13,7 +13,6 @@ public class ManagerMenu {
             System.out.println("Enter name of employee: ");
             String name = Input.scanner.next();
 
-    
             System.out.println("Enter birth year of employee: ");
             int birthYear = Input.scanner.nextInt();
             
