@@ -1,4 +1,3 @@
-import java.util.Scanner;
 import java.util.ArrayList; 
 
 public class MainMenu {
@@ -9,10 +8,10 @@ public class MainMenu {
 
     public void displayMainMenu () {
         ArrayList<Employee> employeeArray = new ArrayList<Employee>();
+        InputClass input = new InputClass();
 
         int exit = 0;
         do {
-            Scanner input = new Scanner(System.in);
             System.out.println("Main menu: ");
             System.out.println("Welcome to DART, your good old game rental system. The competition has no steam to keep up!");
             System.out.println();
@@ -22,7 +21,7 @@ public class MainMenu {
             System.out.println("3. Enter 'C' for Customer");
             System.out.println("4. Enter 'X' to exit system");
 
-            String choice = input.nextLine();
+            String choice = input.inputString("");
 
             if (choice.equalsIgnoreCase("M")) {
                 //managerMenu(employeeArray);
@@ -39,8 +38,7 @@ public class MainMenu {
                 exit = 1;
             } else {
                 System.out.println("Please choose an option from the menu ");
-            }
-            input.close(); 
+            } 
 
         } while ( exit != 1);
         

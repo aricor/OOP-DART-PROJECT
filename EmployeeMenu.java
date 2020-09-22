@@ -1,4 +1,3 @@
-import java.util.Scanner;
 
 public class EmployeeMenu {
 
@@ -9,15 +8,12 @@ public class EmployeeMenu {
 
         public void displayEmployeeMenu() {
 
+                InputClass input = new InputClass();
+
                 String employeePassword = "Employee123";
-                Scanner inputPassword = new Scanner(System.in);
-                System.out.println("Enter the password: ");
-                String userPassword = inputPassword.nextLine();
-                inputPassword.close();
+                String userPassword = input.inputString("Enter the password");
 
                 if (employeePassword.equals(userPassword)) {
-
-                        Scanner inputEmployee = new Scanner(System.in);
 
                         System.out.println("Employee Screen - Type one of the options below:");
                         System.out.println("1. Register a game");
@@ -28,8 +24,8 @@ public class EmployeeMenu {
                         System.out.println("6. View all games");
                         System.out.println("7. Return to main menu");
 
-                        int employeeChoice = inputEmployee.nextInt();
-                        inputEmployee.close();
+                        int employeeChoice = input.inputInt("");
+
                         if (employeeChoice == 1) {
                                 //Register a game
 
