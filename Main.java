@@ -1,10 +1,10 @@
 import java.util.Scanner;
-import java.util.ArrayList;
+import java.util.ArrayList; 
   
 public class Main {
 
     public static void mainMenu () {
-        ArrayList<Employee> employeeArray = new ArrayList< >();
+        ArrayList<Employee> employeeArray = new ArrayList<Employee>();
 
         int exit = 0;
         do {
@@ -18,15 +18,13 @@ public class Main {
             System.out.println("3. Enter 'C' for Customer");
             System.out.println("4. Enter 'X' to exit system");
 
-
-            String choice = input.nextLine(); //THE PROBLEM IS HERE!
-
+            String choice = input.nextLine();
 
             if (choice.equalsIgnoreCase("M")) {
                 managerMenu(employeeArray);
 
-            } else if (choice.equalsIgnoreCase("E")) {
-                employeeMenu();  //ONE MORE PROBLEM
+            } else if (choice.equalsIgnoreCase("E")) { 
+                employeeMenu();
             } else if (choice.equalsIgnoreCase("C")) {
                 customerMenu();
             } else if (choice.equalsIgnoreCase("X")) {
@@ -36,7 +34,7 @@ public class Main {
             } else {
                 System.out.println("Please choose an option from the menu ");
             }
-            input.close();
+            input.close(); 
 
         } while ( exit != 1);
         
@@ -56,170 +54,154 @@ public class Main {
         input.nextLine();
 
         System.out.println("Enter age of employee: ");
-        int getAge = input.nextInt(); //use a calculator?
+        int age = input.nextInt(); //use a calculator?
         input.nextLine();
 
         System.out.println("Enter gross salary of employee: ");
-        double getGrossSalary = input.nextDouble();
+        Double grossSalary = input.nextDouble();
         input.nextLine();
 
-        Employee myEmployee = new Employee(id, name, birthYear, getAge, getGrossSalary);
-        return myEmployee;
+        Employee myEmployee = new Employee(id, name, birthYear, age,grossSalary);
+        return myEmployee; 
 
     }
 
     public static void managerMenu (ArrayList<Employee> employeeArray) {
 
-        Scanner inputManager = new Scanner(System.in);
-        System.out.println("Manager Screen - Type one of the options below:");
-        System.out.println("1. Add an employee");
-        System.out.println("2. View all employees");
-        System.out.println("3. Return to the main menu");
-        int managerChoice = inputManager.nextInt();
-        inputManager.nextLine();
-        inputManager.close(); 
-
-        if (managerChoice == 1) {
-
-            String managerPassword = "Manager123";
-            String inputPassword = new String(String.valueOf(System.in));
-            System.out.println("Enter the password: ");
-            String userPassword;
-            userPassword = inputPassword; //??? THERE IS A PROBLEM WITH THE nextLine
-            //inputPassword.close();
-
-            if (userPassword.equals(managerPassword)) {
-                System.out.println("Success!");
-                //Epic feature 2
-                Scanner input = new Scanner(System.in);
-                Employee ref = inputEmployeeInfo(input); 
-                employeeArray.add(ref);
-
-            } else {
-                System.out.println("Invalid password");
-            }
-
-        } else if (managerChoice == 2) {
-            // View employee information
-              for (Employee employeeElement : employeeArray) {
-              employeeElement.print(); 
-            }
-
-        } else if (managerChoice == 3) {
-            System.out.println("main menu");
-            mainMenu();
-        } else {
-            System.out.println("Please choose from the menu");
-        }
-
-    }
-
-
-    public static Game inputGameInfo(Scanner input) {
-        System.out.println("Enter ID: ");
-        String id = input.next();
-        input.nextLine();
-
-        System.out.println("Enter game title: ");
-        String title = input.next();
-        input.nextLine();
-
-        System.out.println("Enter game genre: ");
-        String genre = input.nextLine();
-        input.nextLine();
-
-        System.out.println("Enter daily rent: ");
-        double dailyRent = input.nextDouble();
-        input.nextLine();
-
-        System.out.println("Rent status is: ");
-        boolean rentStatus = input.nextBoolean();
-        input.nextLine();
-
-        Game myGame = new Game(id, title, genre, dailyRent, rentStatus);
-        return myGame;
-
-    }
-
-        public static void employeeMenu() {
-
-            String employeePassword = "Employee123";
-            Scanner inputPassword = new Scanner(System.in);
-            System.out.println("Enter the password: ");
-            String userPassword = inputPassword.nextLine();
-            inputPassword.close();
-
-            if (employeePassword.equals(userPassword)) {
-
-                Scanner inputEmployee = new Scanner(System.in);
-
-                System.out.println("Employee Screen - Type one of the options below:");
-                System.out.println("1. Register a game");
-                System.out.println("2. Remove a game");
-                System.out.println("3. Register a customer");
-                System.out.println("4. Remove a customer");
-                System.out.println("5. Show total rent profit");
-                System.out.println("6. View all games");
-                System.out.println("7. Return to main menu");
-
-                int employeeChoice = inputEmployee.nextInt(); //ONE MORE PROBLEM WITH THE nextLine
-                inputEmployee.close();
-                if (employeeChoice == 1) {
-                    //Register a game
-
-                } else if (employeeChoice == 2) {
-                    //Remove a game
-
-                } else if (employeeChoice == 3) {
-                    System.out.println("Register a customer");
-                    //Register a customer
-
-                } else if (employeeChoice == 4) {
-                    //Remove a customer
-
-                } else if (employeeChoice == 5) {
-                    System.out.println("Total rent profit: ");
-                    //Show total rent profit
-                } else if (employeeChoice == 6) {
-                    //view all games
-
-                } else if (employeeChoice == 7) {
-                    //return to main menu
-                    mainMenu();
-
+        Scanner inputManager = null;
+        try {
+            inputManager = new Scanner(System.in); 
+            System.out.println("Manager Screen - Type one of the options below:");
+            System.out.println("1. Add an employee");
+            System.out.println("2. View all employees");
+            System.out.println("3. Return to the main menu");
+            int managerChoice = inputManager.nextInt();
+            // String inputNumber = inputManager.nextLine();
+            inputManager.nextLine();
+            //inputManager.close(); 
+    
+            if (managerChoice == 1) {
+    
+                String managerPassword = "Manager123";
+                Scanner inputPassword = new Scanner(System.in);
+                System.out.println("Enter the password: ");
+                String userPassword;
+                userPassword = inputPassword.nextLine();
+                inputPassword.close();
+                if (userPassword.equals(managerPassword)) {
+                    System.out.println("Success!");
+                    //Epic feature 2
+                    Scanner inputEmployeeInfo = null;
+                    Employee ref = inputEmployeeInfo(inputEmployeeInfo); 
+                    employeeArray.add(ref);
+                    // Scanner inputEmployeeInfo = new Scanner(System.in);
+                    // Employee ref = inputEmployeeInfo(inputEmployeeInfo); 
+                    // employeeArray.add(ref);
+    
                 } else {
-                    System.out.println("Please choose an option from the menu");
-                    //Wrong input
+                    System.out.println("Invalid password");
                 }
+    
+            } else if (managerChoice == 2) {
+                // View employee information
+                  for (Employee employeeElement : employeeArray) {
+                  employeeElement.print(); 
+                }
+    
+            } else if (managerChoice == 3) {
+                System.out.println("main menu");
+                mainMenu();
             } else {
-                System.out.println("Invalid Password!");
+                System.out.println("Please choose from the menu");
             }
+        }
+        finally {
+            if (inputManager!= null) inputManager.close(); 
+        }
+ 
+    }
 
+    public static void employeeMenu () {
+
+        String employeePassword = "Employee123";
+        Scanner inputPassword = new Scanner(System.in);
+        System.out.println("Enter the password: ");
+        String userPassword = inputPassword.nextLine();
+        inputPassword.close(); 
+
+        if (employeePassword.equals(userPassword)) {
+
+            Scanner inputEmployee = new Scanner(System.in);
+
+            System.out.println("Employee Screen - Type one of the options below:");
+            System.out.println("1. Register a game");
+            System.out.println("2. Remove a game");
+            System.out.println("3. Register a customer");
+            System.out.println("4. Remove a customer");
+            System.out.println("5. Show total rent profit");
+            System.out.println("6. View all games");
+            System.out.println("7. Return to main menu");
+
+            int employeeChoice = inputEmployee.nextInt();
+            inputEmployee.close(); 
+            if (employeeChoice == 1) {
+                //Register a game
+
+            } else if (employeeChoice == 2) {
+                //Remove a game
+
+            } else if (employeeChoice == 3) {
+                System.out.println("Register a customer");
+                //Register a customer
+
+            } else if (employeeChoice == 4) {
+                //Remove a customer
+
+            } else if (employeeChoice == 5) {
+                //Show total rent profit
+
+            } else if (employeeChoice == 6) {
+                //view all games
+
+            } else if (employeeChoice == 7) {
+                //return to main menu
+                mainMenu();
+
+            } else {
+                System.out.println("Please choose an option from the menu");
+                //Wrong input
+
+            }
+        } else {
+            System.out.println("Invalid Password");
         }
 
+    }
 
-    public static void customerMenu(){
+    public static void customerMenu () {
 
         Scanner inputCustomer = new Scanner(System.in);
 
         System.out.println("Customer Screen - Type one of the options below:");
         System.out.println("1. Rent a game");
         System.out.println("2. Return a game");
+
         System.out.println("3. Return to Main Menu");
 
         int customerChoice = inputCustomer.nextInt();
-        inputCustomer.close();
+        inputCustomer.close(); 
         if (customerChoice == 1) {
             //Rent a game
 
         } else if (customerChoice == 2) {
             //Return a game
 
-        } else if (customerChoice == 3) {
+        } else if (customerChoice == 3){
             mainMenu();
         } else {
             System.out.println("Please choose an option from the menu"); //Wrong input
         }
+
 
     }
 
@@ -245,6 +227,8 @@ public class Main {
     public static void main(String[] args) {
         //public int index = ; 
         mainMenu();
+
+
 
     }
 
