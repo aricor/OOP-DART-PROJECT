@@ -7,7 +7,7 @@ public class MainMenu {
 
     }
 
-    public void displayMainMenu () {
+    public static void displayMainMenu () {
         ArrayList<Employee> employeeArray = new ArrayList<Employee>();
 
         int exit = 0;

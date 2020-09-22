@@ -229,9 +229,8 @@ public class Main {
         //public int index = ; 
         //mainMenu();
 
-        MainMenu mainMenu = new MainMenu();
 
-        mainMenu.displayMainMenu();
+        MainMenu.displayMainMenu();
 
 
 
