@@ -10,7 +10,6 @@ public class CustomerMenu {
         System.out.println("2. Return a game");
         System.out.println("3. Return to Main Menu");
         int customerChoice = Input.scanner.nextInt(); 
-        //int customerChoice = Main.sc.nextInt();
         if (customerChoice == 1) {
             //Rent a game
 
