@@ -15,7 +15,7 @@ public class ManagerMenu {
 
             int birthYear = input.inputInt("Enter birth year of employee: ");
             
-            int age = input.inputInt("Enter age of employee: "); //use a calculator?
+            int age = input.inputInt("Enter age of employee: ");
     
             Double grossSalary = input.inputDouble("Enter gross salary of employee: ");
     
@@ -26,7 +26,7 @@ public class ManagerMenu {
     public void displayManagerMenu () {
             InputClass input = new InputClass();
 
-            //Entere password   
+            //Enter password
             String managerPassword = "Manager123";
             String userPassword = input.inputString("Enter the password: ");
 

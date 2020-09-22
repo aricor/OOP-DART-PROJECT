@@ -9,6 +9,8 @@ public class MainMenu {
 
     public static void displayMainMenu () {
         ArrayList<Employee> employeeArray = new ArrayList<Employee>();
+        ArrayList<Game> gameArray = new ArrayList<Game>();
+        ArrayList<Customer> customerArray = new ArrayList<Customer>();
         InputClass input = new InputClass();
 
         int exit = 0;
@@ -30,11 +32,11 @@ public class MainMenu {
                 managerMenu.displayManagerMenu(); 
             } else if (choice.equalsIgnoreCase("E")) { 
                 //employeeMenu();
-                EmployeeMenu employeeMenu = new EmployeeMenu();
+                EmployeeMenu employeeMenu = new EmployeeMenu(gameArray);
                 employeeMenu.displayEmployeeMenu();
             } else if (choice.equalsIgnoreCase("C")) {
                // customerMenu();
-               CustomerMenu customerMenu = new CustomerMenu();
+               CustomerMenu customerMenu = new CustomerMenu(customerArray);
                customerMenu.displayCustomerMenu();
             } else if (choice.equalsIgnoreCase("X")) {
                 System.out.println("Exiting the system");

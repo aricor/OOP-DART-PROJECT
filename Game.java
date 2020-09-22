@@ -5,13 +5,12 @@ public class Game {
     double dailyRent;
     boolean rentStatus;
 
-    public Game(String ID, String title, String genre, double dailyRent, boolean rentStatus) {
+    public Game(String ID, String title, String genre, double dailyRent) {
         this.ID = ID;
         this.title = title;
         this.genre = genre;
         this.dailyRent = dailyRent;
-        this.rentStatus = rentStatus;
-
+        this.rentStatus = false;
     }
 
     public boolean getRentStatus() {
@@ -19,4 +18,8 @@ public class Game {
         return true; 
     }
 
+    public void print () {
+        System.out.println( this.ID + " : " + this.title + " ( " + this.genre + " )" + this.dailyRent + " Status: " + this.rentStatus);
+        System.out.println();
+    }
 }

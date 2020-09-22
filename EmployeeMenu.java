@@ -1,11 +1,30 @@
-public class EmployeeMenu {
+import java.util.ArrayList;
 
-        EmployeeMenu() {
+public class EmployeeMenu {
+        ArrayList<Game> gameArray = new ArrayList<Game>();
+        ArrayList<Customer> customerArray = new ArrayList<Customer>();
+
+        public EmployeeMenu(ArrayList<Game> gameArray) {
+                this.gameArray = gameArray;
+        }
+
+        public Game inputGameInfo()  {
+                InputClass input = new InputClass();
+
+                String ID = input.inputString("Enter ID: ");
+
+                String title = input.inputString("Enter title: ");
+
+                String genre = input.inputString("Enter genre: ");
+
+                double dailyRent = input.inputDouble("Enter daily rent: ");
+
+                Game myGame = new Game(ID, title, genre, dailyRent);
+                return myGame;
 
         }
 
-
-        public void displayEmployeeMenu() {
+                public void displayEmployeeMenu() {
 
                 InputClass input = new InputClass();
 
@@ -28,18 +47,21 @@ public class EmployeeMenu {
 
                         switch(employeeChoice){
                                 case 1:
-                                        System.out.println("employee choice is 1 " + employeeChoice); 
-                                        //Register a game
+                                        System.out.println("Register a game");
+                                        Game game = inputGameInfo();
+                                        gameArray.add(game);
                                         break;
-                                case 2: 
-                                        //register a game
+                                case 2:
+                                        System.out.println("Remove a game");
+
                                         break;
                                 case 3:
                                         System.out.println("Register a customer");
-                                        //Register a customer
+                                        //Customer customer = inputCustomerInfo();
+                                        //customerArray.add(customer);
                                         break;
                                 case 4:
-                                        //Remove a customer
+                                        System.out.println("Remove a customer");
                                         break;
                                 case 5:
                                         //Show total rent profit
