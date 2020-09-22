@@ -30,7 +30,7 @@ public class MainMenu {
             } else if (choice.equalsIgnoreCase("E")) { 
                 //employeeMenu();
                 EmployeeMenu employeeMenu = new EmployeeMenu();
-                employeeMenu.displayEmoloyeeMenu();
+                employeeMenu.displayEmployeeMenu();
             } else if (choice.equalsIgnoreCase("C")) {
                // customerMenu();
             } else if (choice.equalsIgnoreCase("X")) {
