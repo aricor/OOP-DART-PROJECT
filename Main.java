@@ -91,12 +91,12 @@ public class Main {
                 if (userPassword.equals(managerPassword)) {
                     System.out.println("Success!");
                     //Epic feature 2
-                    Scanner inputEmployeeInfo = null;
-                    Employee ref = inputEmployeeInfo(inputEmployeeInfo); 
-                    employeeArray.add(ref);
-                    // Scanner inputEmployeeInfo = new Scanner(System.in);
+                    // Scanner inputEmployeeInfo = null;
                     // Employee ref = inputEmployeeInfo(inputEmployeeInfo); 
                     // employeeArray.add(ref);
+                    Scanner inputEmployeeInfo = new Scanner(System.in);
+                    Employee ref = inputEmployeeInfo(inputEmployeeInfo); 
+                    employeeArray.add(ref);
     
                 } else {
                     System.out.println("Invalid password");
