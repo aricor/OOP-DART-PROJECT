@@ -7,15 +7,13 @@ public class CustomerMenu {
 
     }
     public void displayCustomerMenu() {
-        Scanner inputCustomer = new Scanner(System.in);
 
         System.out.println("Customer Screen - Type one of the options below:");
         System.out.println("1. Rent a game");
         System.out.println("2. Return a game");
         System.out.println("3. Return to Main Menu");
 
-        int customerChoice = inputCustomer.nextInt();
-        inputCustomer.close();
+        int customerChoice = Main.sc.nextInt();
         if (customerChoice == 1) {
             //Rent a game
 
@@ -27,5 +25,6 @@ public class CustomerMenu {
         } else {
             System.out.println("Please choose an option from the menu"); //Wrong input
         }
+
     }
 }

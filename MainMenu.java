@@ -12,7 +12,7 @@ public class MainMenu {
 
         int exit = 0;
         do {
-            Scanner input = new Scanner(System.in);
+            // Scanner input = new Scanner(System.in);
             System.out.println("Main menu: ");
             System.out.println("Welcome to DART, your good old game rental system. The competition has no steam to keep up!");
             System.out.println();
@@ -22,7 +22,7 @@ public class MainMenu {
             System.out.println("3. Enter 'C' for Customer");
             System.out.println("4. Enter 'X' to exit system");
 
-            String choice = input.nextLine();
+            String choice = Main.sc.nextLine();
 
             if (choice.equalsIgnoreCase("M")) {
                 //managerMenu(employeeArray);
@@ -41,9 +41,7 @@ public class MainMenu {
             } else {
                 System.out.println("Please choose an option from the menu ");
             }
-            input.close(); 
-
         } while ( exit != 1);
-        
+
     }
 }

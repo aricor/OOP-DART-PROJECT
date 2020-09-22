@@ -13,11 +13,9 @@ public class EmployeeMenu {
                 Scanner inputPassword = new Scanner(System.in);
                 System.out.println("Enter the password: ");
                 String userPassword = inputPassword.nextLine();
-                inputPassword.close();
 
                 if (employeePassword.equals(userPassword)) {
 
-                        Scanner inputEmployee = new Scanner(System.in);
 
                         System.out.println("Employee Screen - Type one of the options below:");
                         System.out.println("1. Register a game");
@@ -28,9 +26,11 @@ public class EmployeeMenu {
                         System.out.println("6. View all games");
                         System.out.println("7. Return to main menu");
 
-                        int employeeChoice = inputEmployee.nextInt();
-                        inputEmployee.close();
+                        int employeeChoice = Main.sc.nextInt();
                         if (employeeChoice == 1) {
+                            System.out.println("employee choice is 1"); 
+                           // inputEmployee.close();
+
                                 //Register a game
 
                         } else if (employeeChoice == 2) {
@@ -60,8 +60,10 @@ public class EmployeeMenu {
                                 //Wrong input
 
                         }
+
                 } else {
                         System.out.println("Invalid Password");
                 }
+
         }
 }
