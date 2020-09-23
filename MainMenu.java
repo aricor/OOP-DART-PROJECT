@@ -8,9 +8,9 @@ public class MainMenu {
     }
 
     public static void displayMainMenu () {
-        ArrayList<Employee> employeeArray = new ArrayList<Employee>();
-        ArrayList<Game> gameArray = new ArrayList<Game>();
-        ArrayList<Customer> customerArray = new ArrayList<Customer>();
+        ArrayList<Employee> employeeArray = new ArrayList< >();
+        ArrayList<Game> gameArray = new ArrayList< >();
+        ArrayList<Customer> customerArray = new ArrayList< >();
         InputClass input = new InputClass();
 
         int exit = 0;

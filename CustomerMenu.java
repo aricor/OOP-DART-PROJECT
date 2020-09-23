@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class CustomerMenu {
 
-    ArrayList<Customer> customerArray = new ArrayList< >();
+    ArrayList<Customer> customerArray;
 
     public CustomerMenu(ArrayList<Customer> customerArray) {
         this.customerArray = customerArray;

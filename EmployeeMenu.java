@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class EmployeeMenu {
 
         //ArrayList<Employee> employeeArray = new ArrayList<Employee>();
-        ArrayList<Game> gameArray = new ArrayList< >();
+        ArrayList<Game> gameArray;
         ArrayList<Customer> customerArray = new ArrayList< >();
 
         public EmployeeMenu(ArrayList<Game> gameArray) {

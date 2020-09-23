@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class ManagerMenu {
-    ArrayList<Employee> employeeArray = new ArrayList< >();
+    ArrayList<Employee> employeeArray;
 
     public ManagerMenu(ArrayList<Employee> employeeArray) {
         this.employeeArray = employeeArray; 
