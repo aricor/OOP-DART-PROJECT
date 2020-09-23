@@ -1,5 +1,6 @@
 import java.util.HashMap; // import HashMap class
 import java.util.ArrayList;
+import java.util.Map;
 
 //import sun.awt.www.content.audio.x_aiff; 
 public class MainMenu {
@@ -9,8 +10,11 @@ public class MainMenu {
 
     public static void displayMainMenu () {
         HashMap<String, Employee> employeeMap = new HashMap<String, Employee>();
+        HashMap<String, Game> gameMap = new HashMap<String, Game>();
+        HashMap<String, Customer> customerMap = new HashMap<String, Customer>();
         ArrayList<Game> gameArray = new ArrayList< >();
         ArrayList<Customer> customerArray = new ArrayList< >();
+
         InputClass input = new InputClass();
 
         int exit = 0;
@@ -30,11 +34,11 @@ public class MainMenu {
                 ManagerMenu managerMenu = new ManagerMenu(employeeMap); 
                 managerMenu.displayManagerMenu(); 
             } else if (choice.equalsIgnoreCase("E")) { 
-                // EmployeeMenu employeeMenu = new EmployeeMenu();
-                // employeeMenu.displayEmployeeMenu();
+                EmployeeMenu employeeMenu = new EmployeeMenu(gameMap);
+                employeeMenu.displayEmployeeMenu();
             } else if (choice.equalsIgnoreCase("C")) {
-            //    CustomerMenu customerMenu = new CustomerMenu();
-            //    customerMenu.displayCustomerMenu();
+                CustomerMenu customerMenu = new CustomerMenu(customerMap);
+                customerMenu.displayCustomerMenu();
             } else if (choice.equalsIgnoreCase("X")) {
                 System.out.println("Exiting the system");
                 //System.exit(0);
