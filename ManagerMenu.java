@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.HashMap; // import HashMap class
 import java.util.Map; // import Map Interface
 
@@ -11,18 +12,20 @@ public class ManagerMenu {
     public Employee inputEmployeeInfo()  {
             InputClass input = new InputClass();
 
-            String ID = UniqueIDs.generateUniqueID(); 
+            String ID = "";
 
             String name = input.inputString("Enter name of employee: ");
 
             int birthYear = input.inputInt("Enter birth year of employee: ");
-                
+            
+            int age =0; 
+    
             double grossSalary = input.inputDouble("Enter gross salary of employee: ");
     
-            Employee myEmployee = new Employee(ID, name, birthYear,grossSalary);
+            Employee myEmployee = new Employee(ID, name, birthYear, age,grossSalary);
             myEmployee.age = myEmployee.setAndGetAge(birthYear); 
             myEmployee.grossSalary = myEmployee.setAndGetGrossSalary(grossSalary, myEmployee.age); 
-            // myEmployee.ID = UniqueIDs.generateUniqueID(); 
+            myEmployee.ID = UniqueIDs.generateUniqueID(); 
             return myEmployee; 
     }
 
@@ -49,8 +52,8 @@ public class ManagerMenu {
                 switch(managerChoice) {
                     // add 
                     case 1: 
-                        Employee employeeRef = inputEmployeeInfo(); 
-                        employeeMap.put(employeeRef.ID, employeeRef); 
+                        Employee ref = inputEmployeeInfo(); 
+                        employeeMap.put(ref.ID, ref); 
                         break;
                     //delete
                     case 2: 
@@ -58,13 +61,10 @@ public class ManagerMenu {
                             String inputIndex =  input.inputString("Enter the ID of the employee you want to delete: ");
                             if (employeeMap.containsKey(inputIndex)) {
                                 employeeMap.remove(inputIndex); 
-                                System.out.println("Successfully removed"); 
                             } else {
                                 System.out.println("Employee with id " + inputIndex + " not found"); 
                             }
-                        } else {
-                            System.out.println("There is no employee here"); 
-                        }
+                        } 
                         break; 
                     //view
                     case 3:

@@ -11,11 +11,19 @@ public class EmployeeMenu {
                 this.customerMap = customerMap;
         }
 
+        public HashMap<String, Game> getGameMap () {
+          return gameMap; 
+        }
+
+        /*public CustomerMenu(HashMap<String, Customer> customerMap) {
+          this.customerMap = customerMap;
+        }*/
+
         public Game inputGameInfo()  {
 
                 InputClass input = new InputClass();
 
-                String ID = "";
+                String ID = ""; 
 
                 String title = input.inputString("Enter title: ");
 

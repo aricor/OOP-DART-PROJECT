@@ -1,4 +1,6 @@
 import java.util.HashMap; // import HashMap class
+import java.util.ArrayList;
+import java.util.Map;
 
 //import sun.awt.www.content.audio.x_aiff; 
 public class MainMenu {
@@ -25,15 +27,16 @@ public class MainMenu {
             System.out.println("4. Enter 'X' to exit system");
 
             String choice = input.inputString("");
+            EmployeeMenu employeeMenu = new EmployeeMenu(gameMap, customerMap);
 
             if (choice.equalsIgnoreCase("M")) {
                 ManagerMenu managerMenu = new ManagerMenu(employeeMap); 
                 managerMenu.displayManagerMenu(); 
             } else if (choice.equalsIgnoreCase("E")) { 
-                EmployeeMenu employeeMenu = new EmployeeMenu(gameMap, customerMap);
+       
                 employeeMenu.displayEmployeeMenu();
             } else if (choice.equalsIgnoreCase("C")) {
-                CustomerMenu customerMenu = new CustomerMenu(customerMap);
+                CustomerMenu customerMenu = new CustomerMenu(customerMap, employeeMenu);
                 customerMenu.displayCustomerMenu();
             } else if (choice.equalsIgnoreCase("X")) {
                 System.out.println("Exiting the system");
