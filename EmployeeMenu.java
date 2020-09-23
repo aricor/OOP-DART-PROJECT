@@ -1,8 +1,10 @@
 import java.util.ArrayList;
 
 public class EmployeeMenu {
-        ArrayList<Game> gameArray = new ArrayList<Game>();
-        ArrayList<Customer> customerArray = new ArrayList<Customer>();
+
+        //ArrayList<Employee> employeeArray = new ArrayList<Employee>();
+        ArrayList<Game> gameArray;
+        ArrayList<Customer> customerArray = new ArrayList< >();
 
         public EmployeeMenu(ArrayList<Game> gameArray) {
                 this.gameArray = gameArray;
@@ -23,6 +25,17 @@ public class EmployeeMenu {
                 return myGame;
 
         }
+        public Customer inputCustomerInfo () {
+                InputClass input = new InputClass();
+
+                String ID = input.inputString("Enter ID of customer: ");
+
+                String customerName = input.inputString("Enter name of customer: ");
+
+                Customer myCustomer = new Customer(ID, customerName);
+                return myCustomer;
+        }
+
 
                 public void displayEmployeeMenu() {
 
@@ -53,25 +66,27 @@ public class EmployeeMenu {
                                         break;
                                 case 2:
                                         System.out.println("Remove a game");
-
                                         break;
                                 case 3:
                                         System.out.println("Register a customer");
-                                        //Customer customer = inputCustomerInfo();
-                                        //customerArray.add(customer);
+                                        Customer customer = inputCustomerInfo();
+                                        customerArray.add(customer);
                                         break;
                                 case 4:
                                         System.out.println("Remove a customer");
                                         break;
                                 case 5:
                                         //Show total rent profit
+                                        System.out.println("Your total rent profit is: ");
                                         break;
                                 case 6:
                                         //view all games
+                                        for (Game gameElement : gameArray) {
+                                                gameElement.print();
+                                        }
                                         break;
                                 case 7:
                                         //return to main menu
-
                                         // Not working
                                         //mainMenu.displayMainMenu();
                                         break;
@@ -81,8 +96,9 @@ public class EmployeeMenu {
                         }
 
                 } else {
-                        System.out.println("Invalid Password");
+                        System.out.println("Invalid Password!");
                 }
 
         }
+
 }

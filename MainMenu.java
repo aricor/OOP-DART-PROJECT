@@ -1,4 +1,6 @@
 import java.util.HashMap; // import HashMap class
+import java.util.ArrayList;
+
 //import sun.awt.www.content.audio.x_aiff; 
 public class MainMenu {
 
@@ -8,6 +10,8 @@ public class MainMenu {
 
     public static void displayMainMenu () {
         HashMap<String, Employee> employeeMap = new HashMap<String, Employee>();
+        ArrayList<Game> gameArray = new ArrayList< >();
+        ArrayList<Customer> customerArray = new ArrayList< >();
         InputClass input = new InputClass();
 
         int exit = 0;

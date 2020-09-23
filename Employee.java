@@ -20,6 +20,13 @@ public class Employee {
     }
 
     public double setAndGetGrossSalary(double grossSalary) {
+        int currentYear = 2020;
+        this.age = currentYear - birthYear;
+        return age;
+    }
+
+
+    public double getGrossSalary(double grossSalary) {  //CALL IN THE MAIN.JAVA IS NOT
         if (grossSalary < 100000.00){
             this.grossSalary = grossSalary;
         } else if (grossSalary >= 100000.00); {

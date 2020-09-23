@@ -2,22 +2,11 @@ import java.util.ArrayList;
 
 public class CustomerMenu {
 
-    ArrayList<Customer> customerArray = new ArrayList<Customer>();
+    ArrayList<Customer> customerArray;
 
     public CustomerMenu(ArrayList<Customer> customerArray) {
         this.customerArray = customerArray;
     }
-    public Customer inputCustomerInfo () {
-            InputClass input = new InputClass();
-
-            String ID = input.inputString("Enter ID of customer: ");
-
-            String customerName = input.inputString("Enter name of employee: ");
-
-            Customer myCustomer = new Customer(ID, customerName);
-            return myCustomer;
-        }
-
 
         public void displayCustomerMenu() {
 
@@ -30,15 +19,20 @@ public class CustomerMenu {
             int customerChoice = input.inputInt("");
 
             switch (customerChoice) {
+                case 1: //rent a game
+                    //System.out.println("Successfully rented!");
+                    //System.out.println("Game with id <ID> is already rented");
+                    //System.out.println("Game with id <ID> not found"); - if the input the wrong ID
+                    break;
 
-                case 1:
-                    //rent a game
+                case 2: //return a game
+                    //System.out.println("Please enter game ID: ");
+                    //System.out.println("Game returned.");
                     break;
-                case 2:
-                    //return a game
-                    break;
+
                 case 3:
                     new MainMenu();
+
                 default:
                     //Wrong input
                     System.out.println("Please choose an option from the menu");

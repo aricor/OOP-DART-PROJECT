@@ -2,7 +2,6 @@
 import java.util.HashMap; // import HashMap class
 import java.util.Map; // import Map Interface
 public class ManagerMenu {
-    // ArrayList<Employee> employeeArray = new ArrayList<Employee>();
     HashMap<String, Employee> employeeMap = new HashMap<String, Employee>();
 
     public ManagerMenu(HashMap<String, Employee> employeeMap) {
@@ -19,7 +18,7 @@ public class ManagerMenu {
             
             int age =0; 
     
-            Double grossSalary = input.inputDouble("Enter gross salary of employee: ");
+            double grossSalary = input.inputDouble("Enter gross salary of employee: ");
     
             Employee myEmployee = new Employee(ID, name, birthYear, age,grossSalary);
             myEmployee.age = myEmployee.setAndGetAge(birthYear); 
