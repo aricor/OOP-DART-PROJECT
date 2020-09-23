@@ -1,15 +1,16 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 public class EmployeeMenu {
 
-        ArrayList<Customer> customerArray;
-        ArrayList<Game> gameArray;
         HashMap<String, Game> gameMap = new HashMap<String, Game>();
         HashMap<String, Customer> customerMap = new HashMap<String, Customer>();
 
-        public EmployeeMenu(HashMap<String, Game> gameMap) {
+        public EmployeeMenu(HashMap<String, Game> gameMap)  {
+                this.gameMap = gameMap;
         }
+
         public Game inputGameInfo()  {
 
                 InputClass input = new InputClass();
@@ -33,7 +34,7 @@ public class EmployeeMenu {
         public Customer inputCustomerInfo () {
                 InputClass input = new InputClass();
 
-                String ID = input.inputString("Enter ID of customer: ");
+                String ID = "";
 
                 String customerName = input.inputString("Enter name of customer: ");
 
@@ -42,7 +43,7 @@ public class EmployeeMenu {
                 return myCustomer;
         }
 
-                public void displayEmployeeMenu() {
+        public void displayEmployeeMenu() {
 
                 InputClass input = new InputClass();
 
@@ -58,16 +59,17 @@ public class EmployeeMenu {
                         System.out.println("3. Register a customer");
                         System.out.println("4. Remove a customer");
                         System.out.println("5. Show total rent profit");
-                        System.out.println("6. View all games");
-                        System.out.println("7. Return to main menu");
+                        System.out.println("6. View all customers");
+                        System.out.println("7. View all games");
+                        System.out.println("8. Return to main menu");
 
                         int employeeChoice = input.inputInt("");
 
                         switch(employeeChoice){
                                 case 1:
                                         System.out.println("Register a game");
-                                        Game game = inputGameInfo();
-                                        gameArray.add(game);
+                                        Game ref = inputGameInfo();
+                                        gameMap.put(ref.ID, ref);
                                         break;
                                 case 2:
                                         if (!gameMap.isEmpty()) {
@@ -82,7 +84,7 @@ public class EmployeeMenu {
                                 case 3:
                                         System.out.println("Register a customer");
                                         Customer customer = inputCustomerInfo();
-                                        customerArray.add(customer);
+                                        customerMap.put(customer.ID, customer);
                                         break;
                                 case 4:
                                         if (!customerMap.isEmpty()) {
@@ -99,12 +101,20 @@ public class EmployeeMenu {
                                         System.out.println("Your total rent profit is: ");
                                         break;
                                 case 6:
-                                        //view all games
-                                        for (Game gameElement : gameArray) {
-                                                gameElement.print();
+                                        //view all customers
+                                        for (Map.Entry<String, Customer> entry: customerMap.entrySet()) {
+                                                Customer customerObject = entry.getValue();
+                                                customerObject.print();
                                         }
                                         break;
                                 case 7:
+                                        //view all games
+                                        for (Map.Entry<String, Game> entry: gameMap.entrySet()) {
+                                                Game gameObject = entry.getValue();
+                                                gameObject.print();
+                                        }
+                                        break;
+                                case 8:
                                         //return to main menu
                                         // Not working
                                         //mainMenu.displayMainMenu();

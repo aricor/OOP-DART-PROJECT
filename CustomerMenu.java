@@ -1,14 +1,17 @@
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
 
 public class CustomerMenu {
 
-    ArrayList<Customer> customerArray;
+    HashMap<String, Customer> customerMap = new HashMap<String, Customer>();
 
-    public CustomerMenu(ArrayList<Customer> customerArray) {
-        this.customerArray = customerArray;
+    public CustomerMenu(HashMap<String, Customer> customerMap)  {
+        this.customerMap = customerMap;
     }
 
-        public void displayCustomerMenu() {
+    public void displayCustomerMenu() {
 
             InputClass input = new InputClass();
 

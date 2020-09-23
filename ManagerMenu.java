@@ -1,6 +1,7 @@
-
+import java.util.ArrayList;
 import java.util.HashMap; // import HashMap class
 import java.util.Map; // import Map Interface
+
 public class ManagerMenu {
     HashMap<String, Employee> employeeMap = new HashMap<String, Employee>();
 
