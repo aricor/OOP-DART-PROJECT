@@ -7,6 +7,7 @@ public class ManagerMenu {
     public ManagerMenu(HashMap<String, Employee> employeeMap) {
         this.employeeMap = employeeMap; 
     }
+
     public Employee inputEmployeeInfo()  {
             InputClass input = new InputClass();
 
@@ -30,7 +31,7 @@ public class ManagerMenu {
     public void displayManagerMenu () {
             InputClass input = new InputClass();
 
-            //Entere password   
+            //Enter password
             String managerPassword = "Manager123";
             String userPassword = input.inputString("Enter the password: ");
 
@@ -42,7 +43,6 @@ public class ManagerMenu {
                 System.out.println("Manager Screen - Type one of the options below:");
                 System.out.println("1. Add an employee");
                 System.out.println("2. Remove an employee");
-
                 System.out.println("3. View all employees");
                 System.out.println("4. Return to the main menu");
                 int managerChoice = input.inputInt("");
