@@ -1,19 +1,20 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class EmployeeMenu {
 
-        //ArrayList<Employee> employeeArray = new ArrayList<Employee>();
+        ArrayList<Customer> customerArray;
         ArrayList<Game> gameArray;
-        ArrayList<Customer> customerArray = new ArrayList< >();
+        HashMap<String, Game> gameMap = new HashMap<String, Game>();
+        HashMap<String, Customer> customerMap = new HashMap<String, Customer>();
 
-        public EmployeeMenu(ArrayList<Game> gameArray) {
-                this.gameArray = gameArray;
+        public EmployeeMenu(HashMap<String, Game> gameMap) {
         }
-
         public Game inputGameInfo()  {
+
                 InputClass input = new InputClass();
 
-                String ID = input.inputString("Enter ID: ");
+                String ID = "";
 
                 String title = input.inputString("Enter title: ");
 
@@ -21,11 +22,14 @@ public class EmployeeMenu {
 
                 double dailyRent = input.inputDouble("Enter daily rent: ");
 
-                double totalProfit = 0.0; 
+                double totalProfit = 0.0;
+
                 Game myGame = new Game(ID, title, genre, dailyRent, totalProfit);
+                myGame.ID = UniqueIDs.generateUniqueID();
                 return myGame;
 
         }
+
         public Customer inputCustomerInfo () {
                 InputClass input = new InputClass();
 
@@ -34,9 +38,9 @@ public class EmployeeMenu {
                 String customerName = input.inputString("Enter name of customer: ");
 
                 Customer myCustomer = new Customer(ID, customerName);
+                myCustomer.ID = UniqueIDs.generateUniqueID();
                 return myCustomer;
         }
-
 
                 public void displayEmployeeMenu() {
 
@@ -66,7 +70,14 @@ public class EmployeeMenu {
                                         gameArray.add(game);
                                         break;
                                 case 2:
-                                        System.out.println("Remove a game");
+                                        if (!gameMap.isEmpty()) {
+                                                String inputIndex =  input.inputString("Enter the ID of the game you want to delete: ");
+                                                if (gameMap.containsKey(inputIndex)) {
+                                                        gameMap.remove(inputIndex);
+                                                } else {
+                                                        System.out.println("Game with id " + inputIndex + " not found");
+                                                }
+                                        }
                                         break;
                                 case 3:
                                         System.out.println("Register a customer");
@@ -74,7 +85,14 @@ public class EmployeeMenu {
                                         customerArray.add(customer);
                                         break;
                                 case 4:
-                                        System.out.println("Remove a customer");
+                                        if (!customerMap.isEmpty()) {
+                                                String inputIndex =  input.inputString("Enter the ID of the customer you want to delete: ");
+                                                if (customerMap.containsKey(inputIndex)) {
+                                                        customerMap.remove(inputIndex);
+                                                } else {
+                                                        System.out.println("Customer with id " + inputIndex + " not found");
+                                                }
+                                        }
                                         break;
                                 case 5:
                                         //Show total rent profit
