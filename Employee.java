@@ -13,31 +13,19 @@ public class Employee {
         this.grossSalary = grossSalary;
     }
 
-
-    public int getAge() {
-        //int currentYear = 2020;
-        //this.age = currentYear - birthYear;
-        return age;
-    }
-
-    public void setAge(int age) {
+    public int setAndGetAge(int birthYear) {
         int currentYear = 2020;
         this.age = currentYear - birthYear;
+        return this.age; 
     }
 
-
-    public double getGrossSalary(double grossSalary) {  //CALL IN THE MAIN.JAVA IS NOT
-                                                        //IS NOT BEING USED!
-        return grossSalary;
-    }
-
-    public void setGrossSalary(double grossSalary) {
+    public double setAndGetGrossSalary(double grossSalary) {
         if (grossSalary < 100000.00){
             this.grossSalary = grossSalary;
         } else if (grossSalary >= 100000.00); {
             this.grossSalary = grossSalary * 0.7;
         }
-
+        return this.grossSalary; 
     }
 
 

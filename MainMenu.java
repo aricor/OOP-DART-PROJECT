@@ -1,5 +1,4 @@
-import java.util.ArrayList;
-
+import java.util.HashMap; // import HashMap class
 //import sun.awt.www.content.audio.x_aiff; 
 public class MainMenu {
 
@@ -8,9 +7,7 @@ public class MainMenu {
     }
 
     public static void displayMainMenu () {
-        ArrayList<Employee> employeeArray = new ArrayList<Employee>();
-        ArrayList<Game> gameArray = new ArrayList<Game>();
-        ArrayList<Customer> customerArray = new ArrayList<Customer>();
+        HashMap<String, Employee> employeeMap = new HashMap<String, Employee>();
         InputClass input = new InputClass();
 
         int exit = 0;
@@ -27,17 +24,14 @@ public class MainMenu {
             String choice = input.inputString("");
 
             if (choice.equalsIgnoreCase("M")) {
-                //managerMenu(employeeArray);
-                ManagerMenu managerMenu = new ManagerMenu(employeeArray); 
+                ManagerMenu managerMenu = new ManagerMenu(employeeMap); 
                 managerMenu.displayManagerMenu(); 
             } else if (choice.equalsIgnoreCase("E")) { 
-                //employeeMenu();
-                EmployeeMenu employeeMenu = new EmployeeMenu(gameArray);
-                employeeMenu.displayEmployeeMenu();
+                // EmployeeMenu employeeMenu = new EmployeeMenu();
+                // employeeMenu.displayEmployeeMenu();
             } else if (choice.equalsIgnoreCase("C")) {
-               // customerMenu();
-               CustomerMenu customerMenu = new CustomerMenu(customerArray);
-               customerMenu.displayCustomerMenu();
+            //    CustomerMenu customerMenu = new CustomerMenu();
+            //    customerMenu.displayCustomerMenu();
             } else if (choice.equalsIgnoreCase("X")) {
                 System.out.println("Exiting the system");
                 //System.exit(0);

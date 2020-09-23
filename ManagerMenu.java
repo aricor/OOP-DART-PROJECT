@@ -1,32 +1,37 @@
-import java.util.ArrayList;
 
+import java.util.HashMap; // import HashMap class
+import java.util.Map; // import Map Interface
 public class ManagerMenu {
-    ArrayList<Employee> employeeArray = new ArrayList<Employee>();
+    // ArrayList<Employee> employeeArray = new ArrayList<Employee>();
+    HashMap<String, Employee> employeeMap = new HashMap<String, Employee>();
 
-    public ManagerMenu(ArrayList<Employee> employeeArray) {
-        this.employeeArray = employeeArray; 
+    public ManagerMenu(HashMap<String, Employee> employeeMap) {
+        this.employeeMap = employeeMap; 
     }
     public Employee inputEmployeeInfo()  {
             InputClass input = new InputClass();
 
-            String ID = input.inputString("Enter ID of employee: ");
+            String ID = "";
 
             String name = input.inputString("Enter name of employee: ");
 
             int birthYear = input.inputInt("Enter birth year of employee: ");
             
-            int age = input.inputInt("Enter age of employee: ");
+            int age =0; 
     
             Double grossSalary = input.inputDouble("Enter gross salary of employee: ");
     
             Employee myEmployee = new Employee(ID, name, birthYear, age,grossSalary);
+            myEmployee.age = myEmployee.setAndGetAge(birthYear); 
+            myEmployee.grossSalary = myEmployee.setAndGetGrossSalary(grossSalary); 
+            myEmployee.ID = UniqueIDs.generateUniqueID(); 
             return myEmployee; 
-
     }
+
     public void displayManagerMenu () {
             InputClass input = new InputClass();
 
-            //Enter password
+            //Entere password   
             String managerPassword = "Manager123";
             String userPassword = input.inputString("Enter the password: ");
 
@@ -37,24 +42,39 @@ public class ManagerMenu {
                 //Show the menu
                 System.out.println("Manager Screen - Type one of the options below:");
                 System.out.println("1. Add an employee");
-                System.out.println("2. View all employees");
-                System.out.println("3. Return to the main menu");
+                System.out.println("2. Remove an employee");
+
+                System.out.println("3. View all employees");
+                System.out.println("4. Return to the main menu");
                 int managerChoice = input.inputInt("");
 
                 //check user choice
                 switch(managerChoice) {
+                    // add 
                     case 1: 
-                         Employee ref = inputEmployeeInfo(); 
-                        employeeArray.add(ref);
+                        Employee ref = inputEmployeeInfo(); 
+                        employeeMap.put(ref.ID, ref); 
+                        // employeeArray.add(ref);
                         break;
-
-                    case 2:
-                        for (Employee employeeElement : employeeArray) {
-                            employeeElement.print();
+                    //view
+                    case 2: 
+                        if (!employeeMap.isEmpty()) {
+                            String inputIndex =  input.inputString("Enter the ID of the employee you want to delete: ");
+                            if (employeeMap.containsKey(inputIndex)) {
+                                employeeMap.remove(inputIndex); 
+                            }
+                        } 
+                        break; 
+                    //delete
+                    case 3:
+                        for (Map.Entry<String, Employee> entry: employeeMap.entrySet()) {
+                            Employee employeeObject = entry.getValue();
+                            employeeObject.print();  
                         }
-                        break;
 
-                    case 3: 
+                        break;
+                    // go back to main menu 
+                    case 4: 
                         MainMenu.displayMainMenu(); 
                         break;
 
