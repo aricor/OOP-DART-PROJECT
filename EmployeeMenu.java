@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -7,8 +6,9 @@ public class EmployeeMenu {
         HashMap<String, Game> gameMap = new HashMap<String, Game>();
         HashMap<String, Customer> customerMap = new HashMap<String, Customer>();
 
-        public EmployeeMenu(HashMap<String, Game> gameMap)  {
+        public EmployeeMenu(HashMap<String, Game> gameMap, HashMap<String, Customer> customerMap )  {
                 this.gameMap = gameMap;
+                this.customerMap = customerMap;
         }
 
         public Game inputGameInfo()  {
@@ -85,6 +85,10 @@ public class EmployeeMenu {
                                         System.out.println("Register a customer");
                                         Customer customer = inputCustomerInfo();
                                         customerMap.put(customer.ID, customer);
+                                        for (Map.Entry<String, Customer> entry: customerMap.entrySet()) {
+                                                Customer customerObject = entry.getValue();
+                                                customerObject.print();
+                                        }
                                         break;
                                 case 4:
                                         if (!customerMap.isEmpty()) {
