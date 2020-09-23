@@ -8,7 +8,7 @@ public class Customer {
 
     }
 
-    public void print () {
+    public void print() {
         System.out.println(this.ID + "  " + this.customerName + "  " );
         System.out.println();
     }

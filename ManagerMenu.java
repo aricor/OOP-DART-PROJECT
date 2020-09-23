@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class ManagerMenu {
-    ArrayList<Employee> employeeArray = new ArrayList<Employee>();
+    ArrayList<Employee> employeeArray = new ArrayList< >();
 
     public ManagerMenu(ArrayList<Employee> employeeArray) {
         this.employeeArray = employeeArray; 
@@ -17,7 +17,7 @@ public class ManagerMenu {
             
             int age = input.inputInt("Enter age of employee: ");
     
-            Double grossSalary = input.inputDouble("Enter gross salary of employee: ");
+            double grossSalary = input.inputDouble("Enter gross salary of employee: ");
     
             Employee myEmployee = new Employee(ID, name, birthYear, age,grossSalary);
             return myEmployee; 

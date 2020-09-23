@@ -19,7 +19,7 @@ public class Game {
     }
 
     public void print () {
-        System.out.println( this.ID + " : " + this.title + " ( " + this.genre + " )" + this.dailyRent + " Status: " + this.rentStatus);
+        System.out.println( this.ID + " : " + this.title + "(" + this.genre + ") " + this.dailyRent + " Status: " + this.rentStatus);
         System.out.println();
     }
 }
