@@ -5,11 +5,10 @@ public class Employee {
     int age;
     double grossSalary;
 
-    public Employee(String ID, String name, int birthYear, int age, double grossSalary) {
+    public Employee(String ID, String name, int birthYear,  double grossSalary) {
         this.ID = ID;
         this.name = name;
         this.birthYear = birthYear;
-        this.age = age;
         this.grossSalary = grossSalary;
     }
 

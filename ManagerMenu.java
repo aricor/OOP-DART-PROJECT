@@ -10,20 +10,18 @@ public class ManagerMenu {
     public Employee inputEmployeeInfo()  {
             InputClass input = new InputClass();
 
-            String ID = "";
+            String ID = UniqueIDs.generateUniqueID(); 
 
             String name = input.inputString("Enter name of employee: ");
 
             int birthYear = input.inputInt("Enter birth year of employee: ");
-            
-            int age =0; 
-    
+                
             double grossSalary = input.inputDouble("Enter gross salary of employee: ");
     
-            Employee myEmployee = new Employee(ID, name, birthYear, age,grossSalary);
+            Employee myEmployee = new Employee(ID, name, birthYear,grossSalary);
             myEmployee.age = myEmployee.setAndGetAge(birthYear); 
             myEmployee.grossSalary = myEmployee.setAndGetGrossSalary(grossSalary, myEmployee.age); 
-            myEmployee.ID = UniqueIDs.generateUniqueID(); 
+            // myEmployee.ID = UniqueIDs.generateUniqueID(); 
             return myEmployee; 
     }
 
@@ -51,8 +49,8 @@ public class ManagerMenu {
                 switch(managerChoice) {
                     // add 
                     case 1: 
-                        Employee ref = inputEmployeeInfo(); 
-                        employeeMap.put(ref.ID, ref); 
+                        Employee employeeRef = inputEmployeeInfo(); 
+                        employeeMap.put(employeeRef.ID, employeeRef); 
                         break;
                     //delete
                     case 2: 
@@ -60,10 +58,13 @@ public class ManagerMenu {
                             String inputIndex =  input.inputString("Enter the ID of the employee you want to delete: ");
                             if (employeeMap.containsKey(inputIndex)) {
                                 employeeMap.remove(inputIndex); 
+                                System.out.println("Successfully removed"); 
                             } else {
                                 System.out.println("Employee with id " + inputIndex + " not found"); 
                             }
-                        } 
+                        } else {
+                            System.out.println("There is no employee here"); 
+                        }
                         break; 
                     //view
                     case 3:
