@@ -21,7 +21,8 @@ public class EmployeeMenu {
 
                 double dailyRent = input.inputDouble("Enter daily rent: ");
 
-                Game myGame = new Game(ID, title, genre, dailyRent);
+                double totalProfit = 0.0; 
+                Game myGame = new Game(ID, title, genre, dailyRent, totalProfit);
                 return myGame;
 
         }

@@ -19,11 +19,18 @@ public class Employee {
         return this.age; 
     }
 
-    public double setAndGetGrossSalary(double grossSalary) {  //CALL IN THE MAIN.JAVA IS NOT
+    public double setAndGetGrossSalary(double grossSalary, int age) {  //CALL IN THE MAIN.JAVA IS NOT
         if (grossSalary < 100000.00){
             this.grossSalary = grossSalary;
         } else if (grossSalary >= 100000.00); {
             this.grossSalary = grossSalary * 0.7;
+        }
+        if (age < 22) {
+            this.grossSalary+=4000; 
+        } else if (22<= age && age <=30) {
+            this.grossSalary+=6000; 
+        } else {
+            this.grossSalary+=7500; 
         }
         return this.grossSalary; 
     }

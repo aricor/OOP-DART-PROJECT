@@ -5,7 +5,6 @@ import java.util.ArrayList;
 public class MainMenu {
 
     MainMenu () {
-
     }
 
     public static void displayMainMenu () {

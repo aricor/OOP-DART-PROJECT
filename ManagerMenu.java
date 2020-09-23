@@ -22,7 +22,7 @@ public class ManagerMenu {
     
             Employee myEmployee = new Employee(ID, name, birthYear, age,grossSalary);
             myEmployee.age = myEmployee.setAndGetAge(birthYear); 
-            myEmployee.grossSalary = myEmployee.setAndGetGrossSalary(grossSalary); 
+            myEmployee.grossSalary = myEmployee.setAndGetGrossSalary(grossSalary, myEmployee.age); 
             myEmployee.ID = UniqueIDs.generateUniqueID(); 
             return myEmployee; 
     }
@@ -53,24 +53,24 @@ public class ManagerMenu {
                     case 1: 
                         Employee ref = inputEmployeeInfo(); 
                         employeeMap.put(ref.ID, ref); 
-                        // employeeArray.add(ref);
                         break;
-                    //view
+                    //delete
                     case 2: 
                         if (!employeeMap.isEmpty()) {
                             String inputIndex =  input.inputString("Enter the ID of the employee you want to delete: ");
                             if (employeeMap.containsKey(inputIndex)) {
                                 employeeMap.remove(inputIndex); 
+                            } else {
+                                System.out.println("Employee with id " + inputIndex + " not found"); 
                             }
                         } 
                         break; 
-                    //delete
+                    //view
                     case 3:
                         for (Map.Entry<String, Employee> entry: employeeMap.entrySet()) {
                             Employee employeeObject = entry.getValue();
                             employeeObject.print();  
                         }
-
                         break;
                     // go back to main menu 
                     case 4: 
