@@ -1,6 +1,4 @@
 import java.util.HashMap; // import HashMap class
-import java.util.ArrayList;
-import java.util.Map;
 
 //import sun.awt.www.content.audio.x_aiff; 
 public class MainMenu {
