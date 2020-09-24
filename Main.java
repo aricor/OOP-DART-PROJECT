@@ -12,3 +12,5 @@ public class Main {
     }
 
 }
+ //hi I copy here what we have and the removing games
+ // and customers 

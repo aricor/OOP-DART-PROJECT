@@ -60,19 +60,31 @@ public class CustomerMenu {
                     //System.out.println("Game returned.");
                     //ID
                     //number of rented days'
-                    String id = input.inputString("Please enter the ID of the game you want to return: ");
+                    String CustomerGameId = input.inputString("Please enter the ID of the game you want to return: ");
                     int daysRented = input.inputInt("Number of days rented: ");
 
-                    // if (!GameMapRef.isEmpty()) {
-                    //    if (GameMapRef.containsKey(gameId)) {
-                    //       Game gameObject = GameMapRef.get(gameId); 
-                    //       setTotalProfit(daysRented); 
-                          
-                    //       // double gameOject.totalProfit = gameObject.getDailyRent()*daysRented; 
-                    //       // System.out.println("Total amount: " + gameObject.getDailyRent()*daysRented);
-                          
-                    //    }
-                    // }
+                    if (!GameMapRef.isEmpty()) {
+                        if (GameMapRef.containsKey(CustomerGameId)) {
+                          //check if has been rentef if rentstatus == true
+                          Game gameObject = GameMapRef.get(CustomerGameId);
+                          if(gameObject.getRentStatus()){
+                            gameObject.setRentStatus(false);
+                            gameObject.setTotalProfit(daysRented);
+                            System.out.println("Total cost: " + gameObject.getDailyRent()*daysRented);
+                          } else {
+                            System.out.println("This game has not been rented");
+                          }
+      
+                          // gameObject.totalProfit += daysRented*gameObject.dailyRent; 
+                           //System.out.println("total profit for this game: " + gameObject.totalProfit); 
+                          //  gameObject.setTotalProfit(daysRented); 
+                          //  gameObject.printTotalProfit(); 0
+                          //  double gameOject.totalProfit = gameObject.getDailyRent()*daysRented; 
+                          //  System.out.println("Total amount: " + gameObject.getDailyRent()*daysRented);
+                        }
+                     } else {
+                       System.out.println("No games here");
+                     }
                 
                     break;
 

@@ -23,7 +23,8 @@ public class EmployeeMenu {
 
                 InputClass input = new InputClass();
 
-                String ID = ""; 
+                //String ID = ""; 
+                String ID = input.inputString("Enter ID: ");
 
                 String title = input.inputString("Enter title: ");
 
@@ -31,10 +32,8 @@ public class EmployeeMenu {
 
                 double dailyRent = input.inputDouble("Enter daily rent: ");
 
-                double totalProfit = 0.0;
-
-                Game myGame = new Game(ID, title, genre, dailyRent, totalProfit);
-                myGame.ID = UniqueIDs.generateUniqueID();
+                Game myGame = new Game(ID, title, genre, dailyRent);
+                //myGame.ID = UniqueIDs.generateUniqueID();
                 return myGame;
 
         }
@@ -103,14 +102,22 @@ public class EmployeeMenu {
                                                 String inputIndex =  input.inputString("Enter the ID of the customer you want to delete: ");
                                                 if (customerMap.containsKey(inputIndex)) {
                                                         customerMap.remove(inputIndex);
+                                                        System.out.println("Successfully deleted with ID " + inputIndex); 
                                                 } else {
                                                         System.out.println("Customer with id " + inputIndex + " not found");
                                                 }
+                                        } else {
+                                          System.out.println("There is no customer to remove"); 
                                         }
                                         break;
                                 case 5:
                                         //Show total rent profit
-                                        System.out.println("Your total rent profit is: ");
+                                        int totalProfitForEmployees = 0;
+                                        for (Map.Entry<String, Game> entry: gameMap.entrySet()) {
+                                          Game gameObject = entry.getValue();
+                                          totalProfitForEmployees += gameObject.totalProfit;  
+                                          }
+                                        System.out.println("Your total rent profit is: " + totalProfitForEmployees); 
                                         break;
                                 case 6:
                                         //view all customers
@@ -128,7 +135,8 @@ public class EmployeeMenu {
                                         break;
                                 case 8:
                                         //return to main menu
-                                        MainMenu.displayMainMenu();
+                                        // Not working
+                                     //mainMenu.displayMainMenu();
                                         break;
                                 default:
                                         System.out.println("Please choose an option from the menu");
