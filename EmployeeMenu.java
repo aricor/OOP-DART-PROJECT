@@ -128,8 +128,7 @@ public class EmployeeMenu {
                                         break;
                                 case 8:
                                         //return to main menu
-                                        // Not working
-                                        //mainMenu.displayMainMenu();
+                                        MainMenu.displayMainMenu();
                                         break;
                                 default:
                                         System.out.println("Please choose an option from the menu");

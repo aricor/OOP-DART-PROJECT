@@ -78,7 +78,8 @@ public class CustomerMenu {
                     break;
 
                 case 3:
-                    new MainMenu();
+                    //new MainMenu();
+                    MainMenu.displayMainMenu();
 
                 default:
                     //Wrong input
