@@ -1,12 +1,12 @@
 import java.util.UUID;
 
 public class Game {
-  String ID;
-  String title;
-  String genre;
-  double dailyRent;
-  boolean rentStatus;
-  double totalProfit; 
+  private String ID;
+  private String title;
+  private String genre;
+  private double dailyRent;
+  private boolean rentStatus;
+  private double totalProfit;
 
   public Game(String ID, String title, String genre, double dailyRent) {
       this.ID = ID;
@@ -43,11 +43,13 @@ public class Game {
   }
   
   public void setRentStatus(boolean rentStatus) {
+
       this.rentStatus = rentStatus;
   }
 
 
   public void setTotalProfit(int days){
+
       this.totalProfit += this.dailyRent * days;
   }
 

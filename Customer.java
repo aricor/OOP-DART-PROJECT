@@ -10,11 +10,11 @@ public class Customer {
     }
 
     public void setID(String UniqueIDs){
-        String uniqueID = UUID.randomUUID().toString();
-        String uniqueIDs = this.ID;
     }
 
-    public String getID(){
+    public String getID() {
+        String uniqueID = UUID.randomUUID().toString();
+        String uniqueIDs = this.ID;
         return this.ID;
     }
 

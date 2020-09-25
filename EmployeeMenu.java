@@ -23,7 +23,7 @@ public class EmployeeMenu {
 
                 InputClass input = new InputClass();
 
-                String ID = "";
+                String ID = UniqueIDs.generateUniqueID();
                 //String ID = input.inputString("Enter ID: ");
 
                 String title = input.inputString("Enter title: ");
@@ -33,7 +33,7 @@ public class EmployeeMenu {
                 double dailyRent = input.inputDouble("Enter daily rent: ");
 
                 Game myGame = new Game(ID, title, genre, dailyRent);
-                myGame.ID = UniqueIDs.generateUniqueID();
+                myGame.getID();
                 return myGame;
 
         }
@@ -41,7 +41,7 @@ public class EmployeeMenu {
         public Customer inputCustomerInfo () {
                 InputClass input = new InputClass();
 
-                String ID = "";
+                String ID = UniqueIDs.generateUniqueID();
 
                 String customerName = input.inputString("Enter name of customer: ");
 
@@ -76,7 +76,7 @@ public class EmployeeMenu {
                                 case 1:
                                         System.out.println("Register a game");
                                         Game ref = inputGameInfo();
-                                        gameMap.put(ref.ID, ref);
+                                        gameMap.put(ref.getID(), ref);
                                         break;
                                 case 2:
                                         if (!gameMap.isEmpty()) {
@@ -115,7 +115,7 @@ public class EmployeeMenu {
                                         int totalProfitForEmployees = 0;
                                         for (Map.Entry<String, Game> entry: gameMap.entrySet()) {
                                           Game gameObject = entry.getValue();
-                                          totalProfitForEmployees += gameObject.totalProfit;  
+                                          totalProfitForEmployees += gameObject.getTotalProfit();
                                           }
                                         System.out.println("Your total rent profit is: " + totalProfitForEmployees); 
                                         break;
