@@ -121,16 +121,24 @@ public class EmployeeMenu {
                                         break;
                                 case 6:
                                         //view all customers
-                                        for (Map.Entry<String, Customer> entry: customerMap.entrySet()) {
-                                                Customer customerObject = entry.getValue();
-                                                customerObject.print();
+                                        if (!customerMap.isEmpty()) {
+                                                for (Map.Entry<String, Customer> entry : customerMap.entrySet()) {
+                                                        Customer customerObject = entry.getValue();
+                                                        customerObject.print();
+                                                }
+                                        } else {
+                                                System.out.println("No games registered.");
                                         }
                                         break;
                                 case 7:
                                         //view all games
-                                        for (Map.Entry<String, Game> entry: gameMap.entrySet()) {
-                                                Game gameObject = entry.getValue();
-                                                gameObject.print();
+                                        if (!gameMap.isEmpty()) {
+                                                for (Map.Entry<String, Game> entry : gameMap.entrySet()) {
+                                                        Game gameObject = entry.getValue();
+                                                        gameObject.print();
+                                                }
+                                        } else {
+                                                System.out.println("No customers registered");
                                         }
                                         break;
                                 case 8:

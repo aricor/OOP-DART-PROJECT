@@ -22,31 +22,38 @@ public class Game {
   }
 
   public double getDailyRent() {
-    return this.dailyRent;
+
+      return this.dailyRent;
   }
 //gotta fix totalRent+= newRent 
   public double getTotalProfit() {
-    return this.totalProfit;
+
+      return this.totalProfit;
   }
 
   public String getID() {
-    return this.ID;
+
+      return this.ID;
   }
 
   public String getTitle() {
-    return this.title;
+
+      return this.title;
   }
 
   public String getGenre() {
-    return this.genre;
+
+      return this.genre;
   }
   
   public void setRentStatus(boolean rentStatus) {
-    this.rentStatus = rentStatus;
+
+      this.rentStatus = rentStatus;
   }
   
   public void setTotalProfit(int days){
-    this.totalProfit += this.dailyRent * days;
+
+      this.totalProfit += this.dailyRent * days;
   }
   
   public void printTotalProfit() {

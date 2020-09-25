@@ -68,9 +68,13 @@ public class ManagerMenu {
                         break; 
                     //view
                     case 3:
-                        for (Map.Entry<String, Employee> entry: employeeMap.entrySet()) {
-                            Employee employeeObject = entry.getValue();
-                            employeeObject.print();  
+                        if (!employeeMap.isEmpty()) {
+                            for (Map.Entry<String, Employee> entry : employeeMap.entrySet()) {
+                                Employee employeeObject = entry.getValue();
+                                employeeObject.print();
+                            }
+                        } else {
+                            System.out.println("No employees registered");
                         }
                         break;
                     // go back to main menu 
