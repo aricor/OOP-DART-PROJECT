@@ -1,11 +1,28 @@
+import java.util.UUID;
+
 public class Customer {
-    String ID;
-    String customerName;
+    private String ID;
+    private String customerName;
     
     public Customer(String ID, String customerName) {
     this.ID = ID;
     this.customerName = customerName;
+    }
 
+    public void setID(String UniqueIDs){
+        String uniqueID = UUID.randomUUID().toString();
+        String uniqueIDs = this.ID;
+    }
+
+    public String getID(){
+        return this.ID;
+    }
+
+    public void setCustomerName(String name){
+    }
+
+    public String getCustomerName(){
+        return this.customerName;
     }
 
     public void print() {
@@ -14,3 +31,4 @@ public class Customer {
     }
 
 }
+

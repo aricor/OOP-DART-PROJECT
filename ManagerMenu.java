@@ -12,21 +12,27 @@ public class ManagerMenu {
     public Employee inputEmployeeInfo()  {
             InputClass input = new InputClass();
 
-            String ID = "";
+            String ID = UniqueIDs.generateUniqueID();
 
             String name = input.inputString("Enter name of employee: ");
 
             int birthYear = input.inputInt("Enter birth year of employee: ");
             
-            int age =0; 
+            int age =0;
     
             double grossSalary = input.inputDouble("Enter gross salary of employee: ");
-    
-            Employee myEmployee = new Employee(ID, name, birthYear, age,grossSalary);
-            myEmployee.age = myEmployee.setAndGetAge(birthYear); 
-            myEmployee.grossSalary = myEmployee.setAndGetGrossSalary(grossSalary, myEmployee.age); 
-            myEmployee.ID = UniqueIDs.generateUniqueID(); 
-            return myEmployee; 
+
+            Employee myEmployee = new Employee(ID, name, birthYear, age, grossSalary);
+            myEmployee.getAge();
+            //ID = UniqueIDs.generateUniqueID();
+            myEmployee.getGrossSalary(); //= myEmployee.getGrossSalary(grossSalary, myEmployee.getAge());
+            return myEmployee;
+
+            //Employee myEmployee = new Employee(ID, name, birthYear, age, grossSalary);
+            //myEmployee.getAge(); //= myEmployee.setAndGetAge(birthYear);
+            //myEmployee.getGrossSalary(); //= myEmployee.getGrossSalary(grossSalary, myEmployee.getAge());
+            //myEmployee.getID(); //= UniqueIDs.generateUniqueID();
+            //return myEmployee;
     }
 
     public void displayManagerMenu () {
@@ -53,7 +59,7 @@ public class ManagerMenu {
                     // add 
                     case 1: 
                         Employee ref = inputEmployeeInfo(); 
-                        employeeMap.put(ref.ID, ref); 
+                        employeeMap.put(ref.getID(), ref);
                         break;
                     //delete
                     case 2: 

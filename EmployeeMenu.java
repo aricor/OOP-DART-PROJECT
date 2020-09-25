@@ -23,8 +23,8 @@ public class EmployeeMenu {
 
                 InputClass input = new InputClass();
 
-                //String ID = ""; 
-                String ID = input.inputString("Enter ID: ");
+                String ID = "";
+                //String ID = input.inputString("Enter ID: ");
 
                 String title = input.inputString("Enter title: ");
 
@@ -33,7 +33,7 @@ public class EmployeeMenu {
                 double dailyRent = input.inputDouble("Enter daily rent: ");
 
                 Game myGame = new Game(ID, title, genre, dailyRent);
-                //myGame.ID = UniqueIDs.generateUniqueID();
+                myGame.ID = UniqueIDs.generateUniqueID();
                 return myGame;
 
         }
@@ -46,7 +46,7 @@ public class EmployeeMenu {
                 String customerName = input.inputString("Enter name of customer: ");
 
                 Customer myCustomer = new Customer(ID, customerName);
-                myCustomer.ID = UniqueIDs.generateUniqueID();
+                myCustomer.getID(); //= UniqueIDs.generateUniqueID();
                 return myCustomer;
         }
 
@@ -91,7 +91,7 @@ public class EmployeeMenu {
                                 case 3:
                                         System.out.println("Register a customer");
                                         Customer customer = inputCustomerInfo();
-                                        customerMap.put(customer.ID, customer);
+                                        customerMap.put(customer.getID(), customer);
                                         for (Map.Entry<String, Customer> entry: customerMap.entrySet()) {
                                                 Customer customerObject = entry.getValue();
                                                 customerObject.print();

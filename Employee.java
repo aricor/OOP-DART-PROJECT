@@ -1,9 +1,11 @@
+import java.util.UUID;
+
 public class Employee {
-    String ID;
-    String name;
-    int birthYear;
-    int age;
-    double grossSalary;
+    private String ID;
+    private String name;
+    private int birthYear;
+    private int age;
+    private double grossSalary;
 
     public Employee(String ID, String name, int birthYear, int age, double grossSalary) {
         this.ID = ID;
@@ -13,31 +15,58 @@ public class Employee {
         this.grossSalary = grossSalary;
     }
 
-    public int setAndGetAge(int birthYear) {
-        int currentYear = 2020;
-        this.age = currentYear - birthYear;
-        return this.age; 
+    public void setID(String UniqueIDs){
     }
 
-    public double setAndGetGrossSalary(double grossSalary, int age) {  //CALL IN THE MAIN.JAVA IS NOT
+    public String getID() {
+        String uniqueID = UUID.randomUUID().toString();
+        String uniqueIDs = this.ID;
+        return this.ID;
+    }
+
+
+    public void setName(String name){
+    }
+
+    public String getName(){
+        return this.name;
+    }
+
+
+    public void setAge(int birthYear) {
+    }
+
+    public int getAge(){
+        int currentYear = 2020;
+        age = currentYear - birthYear;
+        return this.age;
+    }
+
+
+    public double getGrossSalary() {
         if (grossSalary < 100000.00){
-            this.grossSalary = grossSalary;
+
         } else if (grossSalary >= 100000.00); {
-            this.grossSalary = grossSalary * 0.7;
+            grossSalary = grossSalary * 0.7;
         }
         if (age < 22) {
-            this.grossSalary+=4000; 
-        } else if (22<= age && age <=30) {
-            this.grossSalary+=6000; 
+            grossSalary += 4000;
+
+        } else if (22 <= age && age <=30) {
+            grossSalary += 6000;
+
         } else {
-            this.grossSalary+=7500; 
+            grossSalary += 7500;
         }
-        return this.grossSalary; 
+        return this.grossSalary;
     }
 
+    public void setGrossSalary(double grossSalary, int age){
+        //return this.grossSalary;
+    }
 
     public void print () {
-      System.out.println( this.ID + " : " + this.name + " - " + this.birthYear + " (" + this.age + "): " + this.grossSalary + " SEK. ");
+      System.out.println( this.ID + " : " + this.name + " - " + this.birthYear + " (" + this.age + "): " + this.grossSalary + "  sek");
       System.out.println();
     }
 }
